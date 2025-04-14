@@ -3,8 +3,8 @@ from model import Book
 class View:
     def show_menu(self) -> int:
         print("\n--- Menu ---")
-        print("1. Adicionar Livro")
-        print("2. Listar Livros")
+        print("1. Adicionar um livro")
+        print("2. Listar todos os livros")
         print("3. Remover Livro")
         print("4. Sair")
         try:
@@ -19,12 +19,12 @@ class View:
             year = int(input("Ano: "))
             return Book(title, author, year)
         except ValueError:
-            self.show_message("Erro: Ano deve ser um número inteiro.")
+            self.show_message("Erro: Ano deve ser um número inteiro!!!")
             return None
 
     def show_books(self, books: list):
         if not books:
-            print("Nenhum livro cadastrado.")
+            print("Nenhum livro cadastrado!!!")
             return
         for idx, book in enumerate(books):
             print(f"{idx + 1}. {book}")
